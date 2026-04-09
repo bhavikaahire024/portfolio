@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PrepWise | AI Interview Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar glass">
+        <div class="brand">
+          <div class="logo" aria-hidden="true">PW</div>
+          <div>
+            <p class="brand-name">PrepWise</p>
+            <p class="brand-tag">AI Interview Platform</p>
+          </div>
+        </div>
+        <button id="logoutBtn" class="btn btn-ghost hidden">Logout</button>
+      </header>
+
+      <main>
+        <section id="authSection" class="auth-section glass">
+          <div class="auth-copy">
+            <h1>Land your next role with AI-powered interview coaching.</h1>
+            <p>
+              Practice role-specific mock interviews, get smart feedback, and
+              improve with targeted suggestions in one elegant dashboard.
+            </p>
+            <ul>
+              <li>Real-time answer quality insights</li>
+              <li>Role-based interview recommendations</li>
+              <li>Rating trends and performance analytics</li>
+            </ul>
+          </div>
+
+          <div class="auth-card">
+            <div class="tabs" role="tablist" aria-label="Authentication tabs">
+              <button id="signinTab" class="tab active" role="tab" aria-selected="true">Sign In</button>
+              <button id="signupTab" class="tab" role="tab" aria-selected="false">Sign Up</button>
+            </div>
+
+            <form id="signinForm" class="form active" novalidate>
+              <label>
+                Email
+                <input type="email" name="email" placeholder="you@example.com" required />
+              </label>
+              <label>
+                Password
+                <input type="password" name="password" placeholder="••••••••" minlength="6" required />
+              </label>
+              <button type="submit" class="btn btn-primary">Sign In</button>
+            </form>
+
+            <form id="signupForm" class="form" novalidate>
+              <label>
+                Full Name
+                <input type="text" name="name" placeholder="Alex Carter" required />
+              </label>
+              <label>
+                Email
+                <input type="email" name="email" placeholder="you@example.com" required />
+              </label>
+              <label>
+                Password
+                <input type="password" name="password" placeholder="Create password" minlength="6" required />
+              </label>
+              <button type="submit" class="btn btn-primary">Create Account</button>
+            </form>
+
+            <p id="authMessage" class="message" aria-live="polite"></p>
+          </div>
+        </section>
+
+        <section id="dashboardSection" class="dashboard hidden">
+          <div class="welcome glass">
+            <h2 id="welcomeTitle">Welcome back</h2>
+            <p>Track your growth and prepare smarter for your next interview.</p>
+          </div>
+
+          <div class="grid">
+            <article class="panel glass">
+              <h3>Interview Feedback</h3>
+              <ul id="feedbackList" class="list"></ul>
+            </article>
+
+            <article class="panel glass">
+              <h3>Interview Rating</h3>
+              <p class="score"><span id="overallScore">0</span>/10</p>
+              <div class="meter-track">
+                <div id="meterBar" class="meter-bar"></div>
+              </div>
+              <small id="ratingHint">Keep practicing to improve your score.</small>
+            </article>
+
+            <article class="panel glass">
+              <h3>Suggested Interviews</h3>
+              <ul id="suggestionList" class="list"></ul>
+            </article>
+
+            <article class="panel glass">
+              <h3>Platform Features</h3>
+              <ul class="list features">
+                <li>AI answer analysis with confidence scoring</li>
+                <li>Behavioral + technical interview tracks</li>
+                <li>Session replay with transcript highlights</li>
+                <li>Personalized weekly prep plan</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
